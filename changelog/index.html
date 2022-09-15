@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../genindex/" /><link rel="search" title="Search" href="../search/" /><link rel="next" title="License" href="../license/" /><link rel="prev" title="Stability Policy" href="../stability/" />
 
-    <meta name="generator" content="sphinx-5.1.1, furo 2022.06.21.dev1"/>
+    <meta name="generator" content="sphinx-5.1.1, furo 2022.09.15.dev1"/>
         <title>Changelog - Furo</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
@@ -260,17 +260,32 @@
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
 <!--
 
-Version codenames style: {adjective} {colorname}
+Version codenames style:
+
+date "+## %Y.%m.%d -- {adjective} {colorname}" | pbcopy
 
 https://patternbasedwriting.com/elementary_writing_success/list-4800-adjectives/
 https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
+<section id="pragmatic-pistachio">
+<h2>2022.09.15 – Pragmatic Pistachio<a class="headerlink" href="#pragmatic-pistachio" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Add a minimum version constraint on pygments.</p></li>
+<li><p>Add an explicit dependency on <code class="docutils literal notranslate"><span class="pre">sass</span></code>.</p></li>
+<li><p>Change right sidebar title from “Contents” to “On this page”.</p></li>
+<li><p>Correctly position sidebars on small screens.</p></li>
+<li><p>Correctly select only Furo’s own <code class="docutils literal notranslate"><span class="pre">svg</span></code> in related pages <code class="docutils literal notranslate"><span class="pre">nav</span></code>.</p></li>
+<li><p>Make numpy-style documentation headers consistent.</p></li>
+<li><p>Retitle the reference section.</p></li>
+<li><p>Update npm dependencies.</p></li>
+</ul>
+</section>
 <section id="opulent-opal">
 <h2>2022.06.21 – Opulent Opal<a class="headerlink" href="#opulent-opal" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Fix <code class="docutils literal notranslate"><span class="pre">docutils</span> <span class="pre">&lt;=</span> <span class="pre">0.17.x</span></code> compatibility</p></li>
-<li><p>Bump to the latest Node.js LTS</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">docutils</span> <span class="pre">&lt;=</span> <span class="pre">0.17.x</span></code> compatibility.</p></li>
+<li><p>Bump to the latest Node.js LTS.</p></li>
 </ul>
 </section>
 <section id="naughty-nickel-bugfix">
@@ -944,6 +959,7 @@ in the previous release.</p></li>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#pragmatic-pistachio">2022.09.15 – Pragmatic Pistachio</a></li>
 <li><a class="reference internal" href="#opulent-opal">2022.06.21 – Opulent Opal</a></li>
 <li><a class="reference internal" href="#naughty-nickel-bugfix">2022.06.04.1 – Naughty Nickel bugfix</a></li>
 <li><a class="reference internal" href="#naughty-nickel">2022.06.04 – Naughty Nickel</a></li>
