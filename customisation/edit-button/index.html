@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Changing colors" href="../colors/" /><link rel="prev" title="Adding an announcement banner" href="../announcement/" />
 
-    <meta name="generator" content="sphinx-5.2.2, furo 2022.09.15.dev1"/>
+    <meta name="generator" content="sphinx-5.2.2, furo 2022.09.29.dev1"/>
         <title>Adding an edit button - Furo</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
@@ -259,7 +259,9 @@
           <section id="adding-an-edit-button">
 <h1>Adding an edit button<a class="headerlink" href="#adding-an-edit-button" title="Permalink to this heading">#</a></h1>
 <p>Furo can add a small edit button to each document.</p>
-<p>This is automatically added, when the documentation is generated on Read the Docs using a GitHub repository as the source. It is possible to provide this, outside of Read the Docs, by setting the following keys in <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options"><code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code></a>:</p>
+<section id="with-popular-vcs-hosts">
+<h2>With popular VCS hosts<a class="headerlink" href="#with-popular-vcs-hosts" title="Permalink to this heading">#</a></h2>
+<p>Provide the relevant VCS variables, by setting the following keys in <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options"><code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code></a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;source_repository&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/pradyunsg/furo/&quot;</span><span class="p">,</span>
     <span class="s2">&quot;source_branch&quot;</span><span class="p">:</span> <span class="s2">&quot;main&quot;</span><span class="p">,</span>
@@ -267,9 +269,32 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>This model supports github.com, gitlab.com and bitbucket.org as domain names for the <code class="docutils literal notranslate"><span class="pre">source_repository</span></code> key.</p>
+</section>
+<section id="with-arbitrary-urls">
+<h2>With arbitrary URLs<a class="headerlink" href="#with-arbitrary-urls" title="Permalink to this heading">#</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 2022.09.29.</span></p>
+</div>
+<p>Use arbitrary URLs for the edit button, by setting the following key in <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options"><code class="docutils literal notranslate"><span class="pre">html_theme_options</span></code></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;source_edit_link&quot;</span><span class="p">:</span> <span class="s2">&quot;https://my.awesome.host.example.com/awesome/project/edit/</span><span class="si">{filename}</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">{filename}</span></code> component will be replaced with the full path to the file, as known from the base of the documentation directory.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Furo does not enforce that the <code class="docutils literal notranslate"><span class="pre">source_edit_link</span></code> contains <code class="docutils literal notranslate"><span class="pre">{filename}</span></code> or any sort of correctness check on this URL. Make sure to manually confirm that the link works.</p>
+</div>
+</section>
+<section id="read-the-docs-support">
+<h2>Read the Docs support<a class="headerlink" href="#read-the-docs-support" title="Permalink to this heading">#</a></h2>
+<p>If you’re building documentation on Read the Docs using a github.com-hosted repository as the source, the edit button is enabled by default.</p>
 <section id="disabling-on-read-the-docs">
-<h2>Disabling on Read the Docs<a class="headerlink" href="#disabling-on-read-the-docs" title="Permalink to this heading">#</a></h2>
-<p>If you’re building documentation on Read the Docs using a GitHub repository as the source, the edit button is enabled by default. If you wish to disable this, use <a class="reference internal" href="../#top-of-page-button"><span class="std std-ref">top_of_page_button</span></a>.</p>
+<h3>Disabling on Read the Docs<a class="headerlink" href="#disabling-on-read-the-docs" title="Permalink to this heading">#</a></h3>
+<p>If you wish to disable this, use <a class="reference internal" href="../#top-of-page-button"><span class="std std-ref">top_of_page_button</span></a> and set it to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</section>
 </section>
 </section>
 
@@ -336,7 +361,12 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Adding an edit button</a><ul>
+<li><a class="reference internal" href="#with-popular-vcs-hosts">With popular VCS hosts</a></li>
+<li><a class="reference internal" href="#with-arbitrary-urls">With arbitrary URLs</a></li>
+<li><a class="reference internal" href="#read-the-docs-support">Read the Docs support</a><ul>
 <li><a class="reference internal" href="#disabling-on-read-the-docs">Disabling on Read the Docs</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
