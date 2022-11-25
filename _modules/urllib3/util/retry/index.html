@@ -643,7 +643,7 @@
 <div class="viewcode-block" id="Retry.get_retry_after"><a class="viewcode-back" href="../../../../reference/api/#urllib3.util.Retry.get_retry_after">[docs]</a>    <span class="k">def</span> <span class="nf">get_retry_after</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get the value of Retry-After in seconds.&quot;&quot;&quot;</span>
 
-        <span class="n">retry_after</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">getheader</span><span class="p">(</span><span class="s2">&quot;Retry-After&quot;</span><span class="p">)</span>
+        <span class="n">retry_after</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Retry-After&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">retry_after</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
